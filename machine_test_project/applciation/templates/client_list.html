@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<center>
+    <h1>Clients</h1>
+    {% if clients %}
+        <table border="1 pt">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Address</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for client in clients %}
+                    <tr>
+                        <td>{{ client.id }}</td>
+                        <td>{{ client.name }}</td>
+                        <td>{{ client.email }}</td>
+                        <td>{{ client.phone }}</td>
+                        <td style="width: 300px;">{{ client.address }}</td>
+                        <td>
+                            <a href="{% url 'edit_client' client.id %}">Edit</a></td>
+                        <td>
+                            <form method="post" action="{% url 'delete_client' client.id %}">
+                                {% csrf_token %}
+                                <button type="submit" onclick="return confirm('Are you sure you want to delete this client?')">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <br>
+        <br>
+        <a href="{% url 'add_client' %}">
+            <button type="button" class="btn btn-info">  Add Client </button>
+        </a>
+        <a href="{% url 'admin-dashboard' %}">
+            <button type="button" class="btn btn-info">  Back to Home </button>
+        </a>
+    {% else %}
+        <p>No clients found.</p>
+    {% endif %}
+</center>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<center>
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <h1>Add User</h1>
+      <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+      <ul>
+        {% for user in users %}
+          <li>
+            <strong>Name:</strong> {{ user.username }}
+            <br>
+            <strong>Actions:</strong>
+            <a href="{% url 'edit_user' user.id %}" class="btn btn-primary">Edit</a>
+            <a href="{% url 'delete_user' user.id %}" class="btn btn-danger">Delete</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+  </center>
+{% endblock %}

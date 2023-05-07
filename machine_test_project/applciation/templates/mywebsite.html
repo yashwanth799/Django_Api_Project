@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    My Custom Title
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <h1>Welcome to My Custom Website</h1>
+            <p>Some custom content goes here...</p>
+            <a href="{% url 'add_client' %}" class="btn btn-primary">Add New Client</a>
+            <a href="{% url 'add_project' %}" class="btn btn-success">Add New Project</a>
+            <a href="{% url 'add_project' %}" class="btn btn-success">Add New Project</a>
+        </div>
+    </div>
+{% endblock %}

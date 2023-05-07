@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Website</title>
+  <style>
+    nav ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      background-color: #151515;
+      text-align: center;
+    }
+
+    nav li {
+      display: inline-block;
+      margin-right: 20px;
+      position: relative;
+    }
+
+    nav a {
+      display: block;
+      color: #fff;
+      font-size: 16px;
+      line-height: 60px;
+      text-decoration: none;
+    }
+
+    nav ul ul {
+      display: none;
+      position: absolute;
+      top: 60px;
+    }
+
+    nav ul li:hover > ul {
+      display: inherit;
+    }
+
+    nav ul ul li {
+      width: 200px;
+      float: none;
+      display: list-item;
+      position: relative;
+    }
+
+    nav ul ul ul li {
+      position: relative;
+      top: -60px;
+      left: 200px;
+    }
+    
+  </style>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="{% url 'home' %}">Home</a></li>
+      
+      <li class="dropdown">
+        <a href="#">Client</a>
+        <ul>
+          <li><a href="{% url 'add_client' %}">Add Client</a></li>
+          <li><a href="{% url 'client_list' %}">Client List</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#">Project</a>
+        <ul>
+          <li><a href="{% url 'add_project' %}">Add Project</a></li>
+          <li><a href="{% url 'project_list' %}">Project List</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#">User</a>
+        <ul>
+          <li><a href="{% url 'add_user' %}">Add User</a></li>
+          <li><a href="{% url 'user_list' %}">User List</a></li>
+        </ul>
+      </li>
+      
+    </ul>
+  </nav>
+</body>
+</html>

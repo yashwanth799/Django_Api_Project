@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+<center>
+
+<h1>Add a new project</h1>
+
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Add Project</button>
+</form>
+
+{% endblock %}
+
+{% comment %} {% extends "base.html" %}
+
+{% block content %}
+
+<h1>Add a new project</h1>
+
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Add Project</button>
+</form>
+</center>
+
+{% endblock %} {% endcomment %}

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<center>
+
+<h1>Delete Client: {{ client.name }}</h1>
+
+<p>Are you sure you want to delete "{{ client.name }}"?</p>
+
+<form method="POST">
+    {% csrf_token %}
+    <button type="submit">Delete</button>
+</form>
+
+</center>
+{% endblock %}

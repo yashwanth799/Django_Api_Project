@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+{% include 'navbar.html' %}
+<center>
+  <br>
+  <button class="btn btn-info" style="background-color: skyblue;" onclick="window.location.href='{% url 'add_client' %}'">Add New Client</button><br><br>
+  <button class="btn btn-info" style="background-color: skyblue;" onclick="window.location.href='{% url 'add_project' %}'">Add New Project</button><br><br>
+  <button class="btn btn-info" style="background-color: skyblue;" onclick="window.location.href='{% url 'add_user' %}'">Add Users</button></center>
+{% endblock %}
+
