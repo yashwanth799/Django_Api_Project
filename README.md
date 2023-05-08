@@ -13,3 +13,9 @@ It will give one link then after click on the link you will redirect to the webs
 username= admin1 password= 123
 
 Add the above details and hit login button.
+
+#Rest api 
+
+In the project urls you can find the path for rest api application.
+
+After running the program you will redirect to the web page there you can copy paste the api link and execute the project.
